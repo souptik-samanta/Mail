@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyMailer - Powerful Email Automation Display</title>
+    <meta name="description" content="Enterprise-grade email automation with Node.js. Send templated emails, manage attachments, and handle bulk operations effortlessly.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body class="bg-muted">
+    
+    
+
+    <div id="mobile-nav" class="fixed inset-0 bg-white dark:bg-gray-900 z-50 hidden">
+        <div class="container p-4">
+            <div class="flex justify-between items-center">
+                
+                <button id="close-mobile-menu" class="p-2">✕</button>
+    </div>
+
+
+    
+    <nav class="nav-bar fixed w-full top-0 z-40 backdrop-blur-md">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="brand flex items-center space-x-3">
+                    <span class="text-2xl font-bold gradient-text">
+                         EasyMailer
+                    </span>
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="flex space-x-6">
+                        <a href="#features" class="nav-link">Features</a>
+                        <a href="#security" class="nav-link">Security</a>
+                        <a href="#demo" class="nav-link">Demo</a>
+                    </div>
+                    <div class="flex items-center space-x-4 ml-6">
+                        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                            <span class="theme-icon">🌓</span>
+                        </button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="max-w-7xl mx-auto text-center space-y-8">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight animate-fade-in block mt-5 gradient-text">
+                Automated Email Magic
+                <span class="block mt-4 gradient-text">
+                    Simplified
+                </span>
+            </h1>
+            
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Enterprise-grade email automation with Node.js. Send templated emails, manage attachments, 
+                and handle bulk operations effortlessly.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+// Initialize EasyMailer
+const mailer = new EasyMailer(
+  process.env.EMAIL,
+  process.env.PASSWORD
+);</code></pre>
+                </div>
+
+                <div class="feature-badges">
+                    <div class="feature-badge">📨 Bulk Sending</div>
+                    <div class="feature-badge">📎 Attachments</div>
+                    <div class="feature-badge">🔐 OAuth2 Ready</div>
+                    <div class="feature-badge">📊 Analytics Hook</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="max-w-7xl mx-auto px-4 space-y-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+// Add email template
+mailer.addTemplate(
+  'welcome',
+  './templates/welcome.html'
+);</code></pre>
+                </div>
+                <div class="feature-content">
+                    <div class="feature-icon">📝</div>
+                    <h3>Smart Templating</h3>
+                    <p>
+                        Dynamic templates with handlebars-style replacement. 
+                        Organize your email templates in a dedicated directory.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="feature-content order-last md:order-first">
+                    <div class="feature-icon">📨</div>
+                    <h3>Bulk Operations</h3>
+                    <p>
+                        Send to multiple recipients with detailed per-email status reports.
+                        Built-in rate limiting and error handling.
+                    </p>
+                </div>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+// Bulk email sending
+const results = await mailer.sendBulkEmails(
+  ['user1@domain.com', 'user2@domain.com'],
+  {
+    subject: 'Special Offer!',
+    templateName: 'promotion',
+    templateData: { discount: '20%' }
+  }
+);</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="security">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2>Enterprise-Grade Security</h2>
+                <p>Built with your data protection in mind</p>
+            </div>
+            
+            <div class="security-cards">
+                <div class="security-card">
+                    <div class="security-icon">🔐</div>
+                    <h3>Encrypted Credentials</h3>
+                    <p>Never store credentials in plain text using environment variables</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">🛡️</div>
+                    <h3>2FA Ready</h3>
+                    <p>Full support for app-specific passwords and OAuth2 authentication</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">📊</div>
+                    <h3>Compliance Ready</h3>
+                    <p>GDPR-friendly design with audit trails</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="demo-container">
+                <h2>Live Sandbox</h2>
+                <div class="demo-content">
+                    <form id="demoForm">
+                        <div class="form-group">
+                            <label for="recipientEmail">Recipient</label>
+                            <input type="email" id="recipientEmail" placeholder="user@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="templateSelect">Template</label>
+                            <select id="templateSelect" required>
+                                <option value="welcome">Welcome Email</option>
+                                <option value="reset">Password Reset</option>
+                                <option value="promo">Promotional</option>
+                            </select>
+                        </div>
+                        <button type="submit">
+                            🚀 Send Test Email
+                        </button>
+                    </form>
+                    <div class="code-block">
+                        <pre><code class="language-javascript" id="liveCode">
+// Live code preview will
+// update as you fill the form</code></pre>
+                    </div>
+                </div>
+                <div id="demoResult" class="hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
